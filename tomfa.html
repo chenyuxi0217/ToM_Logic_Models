@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>两组牌面的 ToMfa 模型</title>
+  <style>
+    :root {
+      color: #263344;
+      background: #fff;
+      font: 16px/1.65 "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    body {
+      box-sizing: border-box;
+      max-width: 1336px;
+      margin: 0 auto;
+      padding: 20px clamp(16px, 3vw, 28px) 48px;
+    }
+    .tomfa-intro { margin: 32px 0; }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(25px, 4vw, 38px);
+      font-weight: 500;
+      line-height: 1.25;
+    }
+    p { margin: 0; color: #5d6c7f; }
+    a { color: #285984; text-underline-offset: 4px; }
+    a:focus-visible { outline: 2px solid #397ebd; outline-offset: 4px; }
+    .setting { border-top: 1px solid #dfe5ed; margin-top: 32px; padding-top: 20px; }
+    .setting-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 12px; }
+    h2 { margin: 0; font-size: 20px; font-weight: 500; }
+    .setting-header a, .setting-header p { font-size: 14px; }
+    img { display: block; width: 100%; height: auto; outline: 1px solid #dfe5ed; }
+  </style>
+<style>
+.experiment-navigation{display:flex;justify-content:space-between;align-items:center;gap:18px;font-family:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei",system-ui,sans-serif;font-size:13px;line-height:1.6;color:#263344;border-bottom:1px solid #dfe5ed;box-sizing:border-box}
+.experiment-navigation[data-kind="cards"]{max-width:1280px;margin:0 auto 17px;padding:0 0 12px}
+.experiment-navigation[data-kind="birthday"]{max-width:1480px;margin:0 auto;padding:15px 30px}
+.experiment-navigation a{text-decoration:none;color:#50657e;padding:4px 0;white-space:nowrap}
+.experiment-navigation a:hover{color:#285984;text-decoration:underline;text-underline-offset:4px}
+.experiment-navigation a:focus-visible{outline:2px solid #397ebd;outline-offset:4px}
+.experiment-page-links{display:flex;gap:6px;align-items:center}
+.experiment-page-links a{padding:4px 10px;border-radius:5px}
+.experiment-page-links a[aria-current="page"]{background:#edf3fa;color:#285984}
+.model-reference{box-sizing:border-box;max-width:1280px;margin:14px auto 16px;font:14px/1.6 "Segoe UI","Microsoft YaHei UI","Microsoft YaHei",system-ui,sans-serif}
+.model-reference[data-kind="birthday"]{max-width:1480px;margin-bottom:0;padding-inline:30px}
+.model-reference-content{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px;padding:8px 12px;border-inline-start:3px solid #397ebd;border-radius:4px;background:#edf4fc;background:light-dark(#edf4fc,#233244);color:#263344;color:light-dark(#263344,#edf4fc)}
+.model-reference strong{font-weight:600}
+.experiment-footer{display:flex;justify-content:flex-end;max-width:1280px;margin:0 auto;padding-top:12px;font:14px/1.6 "Segoe UI","Microsoft YaHei UI","Microsoft YaHei",system-ui,sans-serif}
+.experiment-footer a{padding-block:4px}
+.model-reference a,.experiment-footer a{color:#285984;color:light-dark(#285984,#a9d1f5);text-underline-offset:4px}
+.model-reference a:focus-visible,.experiment-footer a:focus-visible{outline:2px solid #397ebd;outline-offset:4px}
+@media(max-width:1100px){.experiment-navigation[data-kind="birthday"],.model-reference[data-kind="birthday"]{padding-inline:20px}}
+@media(max-width:820px){.experiment-navigation[data-kind="birthday"],.model-reference[data-kind="birthday"]{padding-inline:18px}}
+@media(max-width:480px){.experiment-navigation{gap:8px;font-size:12px}.experiment-navigation[data-kind="birthday"]{padding:12px}.model-reference[data-kind="birthday"]{padding-inline:12px}.experiment-page-links{gap:3px}.experiment-page-links a{padding:5px 6px}}
+
+</style>
+</head>
+<body>
+<nav class="experiment-navigation" data-kind="tomfa" aria-label="实验导航">
+  <a class="experiment-home-link" href="index.html">← 实验主页</a>
+  <div class="experiment-page-links">
+    <a href="cards.html" >纸牌实验</a>
+    <a href="birthday.html" >生日实验</a>
+  </div>
+</nav>
+<aside class="model-reference" data-kind="tomfa" aria-labelledby="model-reference-label">
+  <div class="model-reference-content">
+    <strong id="model-reference-label">模型定义</strong>
+    <a href="tomfa.pdf">tomfa.pdf</a>
+  </div>
+</aside>
+
+  <main>
+    <header class="tomfa-intro">
+      <h1>两组牌面的 ToMfa 模型</h1>
+      <p>两组牌面在 ToMfa 模型下的逐步更新和回答结果。牌面按 Amy、Bob、Player 排列。</p>
+    </header>
+    <section class="setting" aria-labelledby="setting-1">
+      <div class="setting-header">
+        <div>
+          <h2 id="setting-1">8A · 88 · AA</h2>
+          <p>宣告顺序为 Amy → Bob → Player</p>
+        </div>
+        <a href="assets/aces-and-eights-tomfa-1.png" target="_blank" rel="noopener" aria-label="在新标签页查看 8A、88、AA 的原图">查看原图 ↗</a>
+      </div>
+      <img src="assets/aces-and-eights-tomfa-1.png" width="3520" height="3812" alt="8A、88、AA 的 ToMfa 初始模型、从 M₀ 到 M₆ 的逐步更新及各阶回答">
+    </section>
+    <section class="setting" aria-labelledby="setting-2">
+      <div class="setting-header">
+        <div>
+          <h2 id="setting-2">8A · 8A · AA</h2>
+          <p>宣告顺序为 Player → Amy → Bob</p>
+        </div>
+        <a href="assets/aces-and-eights-tomfa-2.png" target="_blank" rel="noopener" aria-label="在新标签页查看 8A、8A、AA 的原图">查看原图 ↗</a>
+      </div>
+      <img src="assets/aces-and-eights-tomfa-2.png" width="3520" height="4310" alt="8A、8A、AA 的 ToMfa 初始模型、从 M₀ 到 M₇ 的逐步更新及各阶回答" loading="lazy">
+    </section>
+  </main>
+</body>
+</html>

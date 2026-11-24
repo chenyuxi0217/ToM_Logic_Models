@@ -1,0 +1,1430 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Cheryl 的生日 · 心智理论实验</title>
+<style>:root{color-scheme:light;--ink:#263344;--muted:#6b788a;--rule:#dfe5ed;--soft:#f4f6f9;--a:#397ebd;--b:#c27833;--p:#598065;--red:#b94c3e;--accent:#edf4fc;font-family:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei",system-ui,sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:1.6}
+*{box-sizing:border-box}body{margin:0}#birthday-app{max-width:1480px;margin:0 auto;padding:24px 30px 18px}h1,h2,h3,p{margin:0;font-weight:400}h1{font-size:24px;letter-spacing:.02em;line-height:1.35;font-weight:500}h2{font-size:17px;font-weight:500}h3{font-size:14px;font-weight:500}button,select{font:inherit;color:inherit}button,select,a,summary{touch-action:manipulation}button{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:6px 13px;cursor:pointer;white-space:nowrap;line-height:1.5}button:hover:not(:disabled){background:var(--soft);border-color:#b2bfce}button.primary{background:var(--ink);color:white;border-color:var(--ink)}button.primary:hover:not(:disabled){background:#3e4d60}button:disabled{opacity:.35;cursor:default}button:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--a);outline-offset:3px}select{width:100%;background:#fff;border:1px solid #d3dce7;border-radius:6px;padding:7px 30px 7px 10px;min-width:0}label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--muted)}label select{font-size:14px;color:var(--ink)}.page-header{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--rule);padding-bottom:17px}.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--muted);margin-bottom:5px}.controls{display:flex;gap:16px;flex-wrap:wrap}.main-controls{padding-top:18px}.main-controls label{flex:1;min-width:180px}.setup-note{font-size:12px;color:var(--muted);margin-top:10px}.stepbar{display:flex;gap:24px;align-items:center;padding:18px 0 20px}.step-buttons{display:flex;gap:8px;align-items:center;flex-shrink:0}#step-number{color:var(--muted);font-size:12px;min-width:55px;text-align:center;font-variant-numeric:tabular-nums}.step-copy{min-width:0}.secondary{font-size:12px;color:var(--muted)}#announcement{font-weight:500}#counts{margin-top:2px}.main-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:26px;border-top:1px solid var(--rule);padding-top:18px}.graph-panel{min-width:0}.panel-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.graph-controls{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.graph-controls button{padding:4px 9px}.graph-controls select{font-size:12px;padding:5px 24px 5px 7px;width:auto;max-width:160px}#zoom-value{min-width:42px;text-align:center;font-size:12px;font-variant-numeric:tabular-nums}#graph-container{height:534px;width:100%;touch-action:none;overflow:hidden;margin-top:10px;border:1px solid #e7ecf2;border-radius:8px;background:linear-gradient(180deg,#fcfdff,#fff)}#graph{width:100%;height:100%;display:block;user-select:none;cursor:grab}#graph.dragging{cursor:grabbing}#graph text{fill:var(--ink);font-family:inherit;font-size:12px}#graph .axis{fill:var(--muted);font-size:12px}#graph .node-title{font-weight:500}#graph .node{cursor:pointer}#graph .node:focus-visible{outline:none}#graph .node:focus-visible .node-box{stroke:var(--a);stroke-width:3}#graph .missing{fill:#b1bbc7;opacity:.55}#graph .newly-removed{fill:var(--red);text-decoration:line-through}#graph .edge-hit{stroke:transparent;stroke-width:14;fill:none;cursor:pointer}#graph .edge-visible{stroke-width:1.8;opacity:.95;fill:none;pointer-events:none}#graph .edge-halo{stroke:#fff;stroke-width:5.2;fill:none;pointer-events:none}.legend{display:flex;gap:15px;flex-wrap:wrap;align-items:center;margin-top:12px;font-size:12px}.legend>span{display:flex;align-items:center;gap:6px}.line{display:inline-block;width:22px;border-top:2px solid var(--a)}.line.b{border-color:var(--b);border-top-style:dashed}.line.p{border-color:var(--p);border-top-style:dashed}.removed-key{color:var(--red)}.connection{font-size:12px;margin-top:10px;min-height:20px}.graph-hint{margin-top:3px}.pal-worlds{border-top:1px solid var(--rule);margin-top:14px;padding-top:12px;font-size:12px}.pal-worlds strong{font-weight:500}.date-links{display:inline-flex;gap:5px;flex-wrap:wrap;margin-left:5px}.date-link{border:0;background:var(--soft);font-size:12px;padding:2px 7px;border-radius:4px}.answers-panel{border-left:1px solid var(--rule);padding-left:24px;min-width:0}.answers-heading{display:flex;flex-direction:column;gap:4px}.selected-field{margin:15px 0 7px}.answers-table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}.answers-table th,.answers-table td{padding:9px 3px;text-align:center;border-bottom:1px solid #edf0f5;vertical-align:middle}.answers-table th{font-weight:500}.answers-table th:first-child,.answers-table td:first-child{text-align:left;width:42px}.answers-table td{font-variant-numeric:tabular-nums}.answers-table .pal-row td{border-bottom:0;background:#f8fafc}.answer-known{display:inline-block;color:#285984;background:var(--accent);border-radius:4px;padding:2px 5px;white-space:nowrap}.answer-unknown{white-space:nowrap}.answer-mark{color:var(--muted);font-size:11px;margin-left:2px}.answers-panel>.secondary{margin-top:8px;line-height:1.6}.neighbor-panel{border-top:1px solid var(--rule);padding-top:15px;margin-top:17px}.neighbor-panel .panel-heading{font-size:12px}.neighbor-row{display:flex;gap:9px;align-items:baseline;margin-top:6px;font-size:12px}.neighbor-who{width:62px;flex-shrink:0}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px}.neighbor-links{display:flex;flex-wrap:wrap;gap:3px}.neighbor-links button{font-size:12px;padding:0 2px;border:0;border-radius:0;background:none;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#cbd5df}.neighbor-links button:hover{color:var(--a);background:none}.neighbor-note{font-size:12px;color:var(--muted);margin-top:8px}.fold{border-top:1px solid var(--rule);margin-top:20px}.fold summary{cursor:pointer;padding:14px 0;font-weight:500}.fold summary>span{margin-left:12px;font-weight:400}#date-list{font-size:13px;margin-bottom:18px}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.candidate-removed{color:var(--red)}
+@media(min-width:1600px){#birthday-app{padding-top:32px}.main-grid{grid-template-columns:minmax(0,1fr) 350px}}
+@media(max-width:1100px){#birthday-app{padding:20px}.main-grid{grid-template-columns:minmax(0,1fr) 294px;gap:18px}.answers-panel{padding-left:18px}.graph-controls{gap:4px}.panel-heading{gap:7px}}
+@media(max-width:820px){#birthday-app{padding:18px}.main-grid{grid-template-columns:1fr}.answers-panel{border-left:0;border-top:1px solid var(--rule);padding:18px 0 0}.answers-heading{flex-direction:row;align-items:baseline;flex-wrap:wrap}.answers-table{font-size:13px}.answers-table th:first-child{width:56px}.neighbor-panel{margin-top:12px}.selected-field{max-width:280px}.stepbar{gap:14px;flex-wrap:wrap}.step-copy{width:100%}.main-controls{gap:10px}.main-controls label{min-width:160px}#graph-container{height:540px}}
+@media(max-width:480px){#birthday-app{padding:15px 12px}.page-header{gap:8px}h1{font-size:21px}.main-controls label{min-width:100%;flex-basis:100%}.main-controls{padding-top:14px;gap:10px}select{font-size:16px}button{min-height:38px}.stepbar{padding:15px 0}.panel-heading h2{width:100%}.graph-controls{gap:5px}#graph-container{height:600px}.graph-controls button{min-width:35px}.graph-controls select{max-width:145px;min-height:36px}.legend{gap:9px;font-size:11px}.answers-heading h2{width:100%}.answers-table th,.answers-table td{padding-block:10px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.main-grid{grid-template-columns:minmax(0,1fr) 480px}
+.answers-heading h2{line-height:1.55}
+.answers-table{margin-top:8px}
+.answers-table th:first-child,.answers-table td:first-child{width:62px}
+.answers-table th,.answers-table td{padding:8px 3px}
+.answers-table tbody th{font-weight:400}
+.answers-table .pal-row th{background:#f8fafc;border-bottom:0;font-weight:500;white-space:nowrap}
+.answer-known{display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
+.answer-information{display:block;font-weight:400;font-size:11px;color:var(--muted)}
+.answer-set{color:var(--ink);line-height:1.6}
+.date-token{white-space:nowrap}
+.answer-empty{color:var(--muted)}
+@media(min-width:1600px){.main-grid{grid-template-columns:minmax(0,1fr) 480px}}
+@media(max-width:1100px){.main-grid{grid-template-columns:minmax(0,1fr) 450px}}
+@media(max-width:820px){.main-grid{grid-template-columns:1fr}.answers-heading{display:block}.answers-table{font-size:13px}}
+@media(max-width:480px){.answers-table th,.answers-table td{padding:8px 2px}.answers-table th:first-child,.answers-table td:first-child{width:60px}.answer-known{flex-direction:column;gap:0;padding:2px 3px}}
+.pal-history{border-top:1px solid var(--rule);margin-top:20px;padding-top:15px}
+.pal-lists{display:flex;flex-direction:column;gap:10px;margin:10px 0 0;font-size:12px}
+.pal-lists>div{display:grid;grid-template-columns:5em minmax(0,1fr);gap:12px}
+.pal-lists dt{font-weight:500}
+.pal-lists dd{display:flex;flex-wrap:wrap;gap:5px 14px;margin:0}
+.pal-date{white-space:nowrap}
+.puzzle-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;padding:4px 0 14px}
+.puzzle-content h3{margin-bottom:6px}
+.puzzle-content ol{padding-left:22px;margin:6px 0}
+.puzzle-content li{margin-top:5px;font-size:13px}
+@media(max-width:820px){.puzzle-content{grid-template-columns:1fr;gap:20px}}
+</style>
+<style>
+.experiment-navigation{display:flex;justify-content:space-between;align-items:center;gap:18px;font-family:"Segoe UI","Microsoft YaHei UI","Microsoft YaHei",system-ui,sans-serif;font-size:13px;line-height:1.6;color:#263344;border-bottom:1px solid #dfe5ed;box-sizing:border-box}
+.experiment-navigation[data-kind="cards"]{max-width:1280px;margin:0 auto 17px;padding:0 0 12px}
+.experiment-navigation[data-kind="birthday"]{max-width:1480px;margin:0 auto;padding:15px 30px}
+.experiment-navigation a{text-decoration:none;color:#50657e;padding:4px 0;white-space:nowrap}
+.experiment-navigation a:hover{color:#285984;text-decoration:underline;text-underline-offset:4px}
+.experiment-navigation a:focus-visible{outline:2px solid #397ebd;outline-offset:4px}
+.experiment-page-links{display:flex;gap:6px;align-items:center}
+.experiment-page-links a{padding:4px 10px;border-radius:5px}
+.experiment-page-links a[aria-current="page"]{background:#edf3fa;color:#285984}
+.model-reference{box-sizing:border-box;max-width:1280px;margin:14px auto 16px;font:14px/1.6 "Segoe UI","Microsoft YaHei UI","Microsoft YaHei",system-ui,sans-serif}
+.model-reference[data-kind="birthday"]{max-width:1480px;margin-bottom:0;padding-inline:30px}
+.model-reference-content{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px;padding:8px 12px;border-inline-start:3px solid #397ebd;border-radius:4px;background:#edf4fc;background:light-dark(#edf4fc,#233244);color:#263344;color:light-dark(#263344,#edf4fc)}
+.model-reference strong{font-weight:600}
+.experiment-footer{display:flex;justify-content:flex-end;max-width:1280px;margin:0 auto;padding-top:12px;font:14px/1.6 "Segoe UI","Microsoft YaHei UI","Microsoft YaHei",system-ui,sans-serif}
+.experiment-footer a{padding-block:4px}
+.model-reference a,.experiment-footer a{color:#285984;color:light-dark(#285984,#a9d1f5);text-underline-offset:4px}
+.model-reference a:focus-visible,.experiment-footer a:focus-visible{outline:2px solid #397ebd;outline-offset:4px}
+@media(max-width:1100px){.experiment-navigation[data-kind="birthday"],.model-reference[data-kind="birthday"]{padding-inline:20px}}
+@media(max-width:820px){.experiment-navigation[data-kind="birthday"],.model-reference[data-kind="birthday"]{padding-inline:18px}}
+@media(max-width:480px){.experiment-navigation{gap:8px;font-size:12px}.experiment-navigation[data-kind="birthday"]{padding:12px}.model-reference[data-kind="birthday"]{padding-inline:12px}.experiment-page-links{gap:3px}.experiment-page-links a{padding:5px 6px}}
+
+</style>
+</head>
+<body>
+<nav class="experiment-navigation" data-kind="birthday" aria-label="实验导航">
+  <a class="experiment-home-link" href="index.html">← 实验主页</a>
+  <div class="experiment-page-links">
+    <a href="cards.html" >纸牌实验</a>
+    <a href="birthday.html" aria-current="page">生日实验</a>
+  </div>
+</nav>
+<aside class="model-reference" data-kind="birthday" aria-labelledby="model-reference-label">
+  <div class="model-reference-content">
+    <strong id="model-reference-label">模型定义</strong>
+    <a href="https://repository.tudelft.nl/record/uuid%3Af7d1ba47-20c5-446f-b21b-fe7651661070" target="_blank" rel="noopener">Top 等（2024）</a>
+  </div>
+</aside>
+
+<main id="birthday-app">
+  <header class="page-header"><div><div class="eyebrow">CHERYL'S BIRTHDAY</div><h1>生日、知识与可能世界</h1></div></header>
+  <div class="controls main-controls">
+    <label>生日题版本<select id="order"><option value="1">一阶生日题</option><option value="2">二阶生日题</option><option value="3">三阶生日题</option><option value="4">四阶生日题</option></select></label>
+    <label>日期配置<select id="configuration"><option value="original">原始配置</option><option value="months">月份镜像</option><option value="days">日期镜像</option><option value="both">月份与日期镜像</option></select></label>
+    <label>模型更新方式<select id="semantics"><option value="paper">论文原始定义</option><option value="skip-empty">空后继略过</option><option value="prune-empty">空后继排除</option></select></label>
+  </div>
+  <div class="setup-note">Albert 知道月份 · Bernard 知道日期 · 你只知道候选列表和公开对话</div>
+  <div class="setup-note mode-note">这 16 道题的标准宣告序列中，三种更新方式给出相同的列表结果。</div>
+  <div class="stepbar"><div class="step-buttons"><button id="prev" type="button">上一步</button><button id="next" class="primary" type="button">下一步</button><output id="step-number"></output></div><div class="step-copy" aria-live="polite"><div id="announcement"></div><div id="counts" class="secondary"></div></div></div>
+  <div class="main-grid">
+    <section class="graph-panel" aria-label="生日可能世界模型">
+      <div class="panel-heading"><h2>可能世界</h2><div class="graph-controls"><button id="zoom-out" type="button" aria-label="缩小模型">−</button><output id="zoom-value">100%</output><button id="zoom-in" type="button" aria-label="放大模型">＋</button><button id="fit" type="button">复位</button><label class="visually-hidden" for="edges">可达关系</label><select id="edges"><option value="focus">当前节点 · A/B</option><option value="all">全部 A/B 关系</option><option value="A">仅 Albert</option><option value="B">仅 Bernard</option><option value="P">当前节点 · 你</option></select></div></div>
+      <div id="graph-container"><svg id="graph" role="img" aria-label="生日可能世界固定图，节点显示你、Albert 和 Bernard 的 ToM 0 至 5 列表"><title>候选生日与各阶视角</title><desc>蓝色实线连接相同月份，橙色虚线连接相同日期。选中节点有双框。数字表示仍在 T 中的阶数，红色删除线表示本步移除。</desc></svg></div>
+      <div class="legend"><span><i class="line a"></i>A · 同月</span><span><i class="line b"></i>B · 同日</span><span><i class="line p"></i>你 · 未获私有信息</span><span class="removed-key">划线：本步移除</span></div>
+      <div id="connection" class="connection" aria-live="polite"></div>
+      <div class="secondary graph-hint">点击节点查看直连，点击连线确认两端 · 滚轮缩放，拖拽平移 · 自环省略，交叉不表示相连</div>
+    </section>
+    <section class="answers-panel" aria-labelledby="answer-title">
+      <div class="answers-heading"><h2 id="answer-title">当前各阶眼中的可能情况及将做出的回答</h2></div>
+      <div id="answer-subtitle" class="secondary" aria-live="polite"></div>
+      <table class="answers-table"><caption id="answer-caption" class="visually-hidden"></caption><thead id="answers-head"></thead><tbody id="answers" aria-live="polite"></tbody></table>
+      <div id="answer-format" class="secondary"></div>
+      <div class="secondary">∅ 表示该阶视角没有有效候选，不代表原题无解。</div>
+      <div class="neighbor-panel"><div class="panel-heading"><h3>相连节点</h3><span id="neighbor-date"></span></div><div id="neighbors"></div></div>
+    </section>
+  </div>
+  <section class="pal-history" aria-labelledby="pal-title">
+    <h2 id="pal-title">PAL 排除的世界</h2>
+    <dl class="pal-lists" aria-live="polite">
+      <div><dt>本步排除</dt><dd id="pal-removed"></dd></div>
+      <div><dt>累计排除</dt><dd id="pal-excluded"></dd></div>
+    </dl>
+  </section>
+  <details class="fold">
+    <summary>题目内容</summary>
+    <div class="puzzle-content">
+      <section><h3>本题候选生日</h3><div id="date-list"></div></section>
+      <section><h3>完整对话</h3><ol id="dialogue"></ol></section>
+    </div>
+  </details>
+</main>
+<script id="birthday-data" type="application/json">{
+  "source": "https://github.com/AndreeaMinculescu/Cheryl-Puzzle/blob/main/interface/question_bank.txt",
+  "sourceSha256": "755d3eca5c41e7a8b12bbc480b640d2831c78cb7d9d962799ca51a50db4b4052",
+  "puzzles": [
+    {
+      "id": "order-1-original",
+      "order": 1,
+      "configuration": "original",
+      "dates": [
+        [
+          5,
+          15
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          18
+        ]
+      ]
+    },
+    {
+      "id": "order-1-days",
+      "order": 1,
+      "configuration": "days",
+      "dates": [
+        [
+          5,
+          16
+        ],
+        [
+          5,
+          17
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          18
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          16
+        ]
+      ]
+    },
+    {
+      "id": "order-1-both",
+      "order": 1,
+      "configuration": "both",
+      "dates": [
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          17
+        ]
+      ]
+    },
+    {
+      "id": "order-1-months",
+      "order": 1,
+      "configuration": "months",
+      "dates": [
+        [
+          5,
+          16
+        ],
+        [
+          5,
+          18
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          8,
+          18
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          16
+        ]
+      ]
+    },
+    {
+      "id": "order-2-original",
+      "order": 2,
+      "configuration": "original",
+      "dates": [
+        [
+          5,
+          17
+        ],
+        [
+          5,
+          18
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          15
+        ]
+      ]
+    },
+    {
+      "id": "order-2-days",
+      "order": 2,
+      "configuration": "days",
+      "dates": [
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          17
+        ],
+        [
+          9,
+          18
+        ]
+      ]
+    },
+    {
+      "id": "order-2-both",
+      "order": 2,
+      "configuration": "both",
+      "dates": [
+        [
+          5,
+          17
+        ],
+        [
+          5,
+          18
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          18
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          15
+        ]
+      ]
+    },
+    {
+      "id": "order-2-months",
+      "order": 2,
+      "configuration": "months",
+      "dates": [
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          9,
+          17
+        ],
+        [
+          9,
+          18
+        ]
+      ]
+    },
+    {
+      "id": "order-3-original",
+      "order": 3,
+      "configuration": "original",
+      "dates": [
+        [
+          5,
+          15
+        ],
+        [
+          5,
+          18
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          16
+        ]
+      ]
+    },
+    {
+      "id": "order-3-days",
+      "order": 3,
+      "configuration": "days",
+      "dates": [
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          17
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          8,
+          18
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          17
+        ]
+      ]
+    },
+    {
+      "id": "order-3-both",
+      "order": 3,
+      "configuration": "both",
+      "dates": [
+        [
+          5,
+          16
+        ],
+        [
+          5,
+          17
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          17
+        ]
+      ]
+    },
+    {
+      "id": "order-3-months",
+      "order": 3,
+      "configuration": "months",
+      "dates": [
+        [
+          5,
+          15
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          18
+        ]
+      ]
+    },
+    {
+      "id": "order-4-original",
+      "order": 4,
+      "configuration": "original",
+      "dates": [
+        [
+          5,
+          15
+        ],
+        [
+          5,
+          18
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          17
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          17
+        ]
+      ]
+    },
+    {
+      "id": "order-4-days",
+      "order": 4,
+      "configuration": "days",
+      "dates": [
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          17
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          16
+        ]
+      ]
+    },
+    {
+      "id": "order-4-both",
+      "order": 4,
+      "configuration": "both",
+      "dates": [
+        [
+          5,
+          15
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          8,
+          18
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          17
+        ]
+      ]
+    },
+    {
+      "id": "order-4-months",
+      "order": 4,
+      "configuration": "months",
+      "dates": [
+        [
+          5,
+          16
+        ],
+        [
+          5,
+          17
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          7,
+          17
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          18
+        ]
+      ]
+    }
+  ]
+}
+</script>
+<script>/* Top et al. (2024), Definition 3 and Appendix A, applied to Cheryl's Birthday.
+ * Worlds are dates; A sees month, B sees day, P sees neither.
+ * Updates remove perspective tuples synchronously, never S/R/V.
+ * Empty-successor alternatives for nested announcements are explicit extensions.
+ */
+(function(root, factory) {
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  if (root) root.BirthdayModel = api;
+})(typeof globalThis === 'undefined' ? this : globalThis, function() {
+  'use strict';
+  const PLAYERS = ['P', 'A', 'B'];
+  const MODES = ['paper', 'skip-empty', 'prune-empty'];
+  const MAX_LEVEL = 5;
+  const atom = id => ({op:'atom', id});
+  const not = f => ({op:'not', f});
+  const and = (...fs) => ({op:'and', fs});
+  const K = (who, f) => ({op:'K', who, f});
+  // knowsDate abbreviates the disjunction over dates d of K_who(date=d).
+  const knows = who => ({op:'knowsDate', who});
+  const initial = f => ({op:'initial', f});
+  const dialogue = order => order === 1
+    ? [{speaker:'B', text:'我知道 Cheryl 的生日。', formula:knows('B')}]
+    : [{speaker:order === 4 ? 'B' : 'A',
+        text:order === 2 ? '我不知道 Cheryl 的生日。' : order === 3 ? '我知道你不知道 Cheryl 的生日。' : '我知道你知道我不知道 Cheryl 的生日。',
+        formula:order === 2 ? not(knows('A')) : order === 3 ? K('A', not(knows('B'))) : K('B', K('A', not(knows('B'))))},
+       {speaker:order === 4 ? 'A' : 'B', text:'我起初不知道，但现在知道了。',
+        formula:and(initial(not(knows(order === 4 ? 'A' : 'B'))), knows(order === 4 ? 'A' : 'B'))}];
+
+  function paths(f) {
+    if (f.op === 'atom') return [[]];
+    if (f.op === 'not' || f.op === 'initial') return paths(f.f);
+    if (f.op === 'and') return f.fs.flatMap(paths);
+    if (f.op === 'knowsDate') return [[f.who]];
+    if (f.op === 'K') return paths(f.f).map(p => [f.who, ...p]);
+    throw new Error('Unknown formula');
+  }
+  // Appendix A: count changes of agent, including entering someone else's
+  // perspective from the current observer; repeated self-K costs nothing.
+  function requiredLevel(f, observer) {
+    return Math.max(...paths(f).map(path => {
+      let last = observer, switches = 0;
+      for (const who of path) { if (last !== who) switches++; last = who; }
+      return switches;
+    }));
+  }
+  const cloneT = T => T.map(row => row.map(levels => levels.slice()));
+  const countTuples = T => T.flat(2).filter(Boolean).length;
+  const levelsAt = (T,s,who) => T[s][PLAYERS.indexOf(who)].flatMap((b,l) => b ? [l] : []);
+
+  function create(puzzle, maxLevel = MAX_LEVEL) {
+    if (!Number.isInteger(maxLevel) || maxLevel < 0) throw new Error('Invalid maxLevel');
+    const worlds = puzzle.dates.map(([month,day], index) => ({index, month, day, id:`${month}-${day}`, label:`${month}月${day}日`}));
+    const relations = PLAYERS.map(who => worlds.map(s => worlds.filter(t => who === 'P' || (who === 'A' ? s.month === t.month : s.day === t.day)).map(t => t.index)));
+    const edges = [];
+    relations.forEach((rows,player) => rows.forEach((ts,source) => ts.forEach(target => { if(source < target) edges.push({source,target,player}); })));
+    const initialT = () => worlds.map(() => PLAYERS.map(() => Array(maxLevel+1).fill(true)));
+    const possible = (T,s,who,l) => l < 0 ? [] : relations[PLAYERS.indexOf(who)][s].filter(t => T[t][PLAYERS.indexOf(who)][l]);
+    const startT = initialT();
+    function evaluate(T, s, observer, level, formula, initialTValue = startT) {
+      const empties = [];
+      function visit(model,world,who,l,f,atInitial=false) {
+        if (f.op === 'atom') return worlds[world].id === f.id;
+        if (f.op === 'not') return !visit(model,world,who,l,f.f,atInitial);
+        if (f.op === 'and') return f.fs.map(g => visit(model,world,who,l,g,atInitial)).every(Boolean);
+        if (f.op === 'initial') return visit(initialTValue,world,who,l,f.f,true);
+        const nextLevel = l - Number(who !== f.who);
+        const targets = possible(model,world,f.who,nextLevel);
+        if (!targets.length) empties.push({world, subject:f.who, level:nextLevel, initial:atInitial});
+        if (f.op === 'knowsDate') return targets.length === 0 || new Set(targets.map(t=>worlds[t].id)).size === 1;
+        if (f.op === 'K') return targets.map(t=>visit(model,t,f.who,nextLevel,f.f,atInitial)).every(Boolean);
+        throw new Error('Unknown formula');
+      }
+      return {truth:visit(T,s,observer,level,formula), empties};
+    }
+    function update(T, formula, mode='paper', initialTValue=startT) {
+      if (!MODES.includes(mode)) throw new Error('Unknown update mode');
+      const next = cloneT(T), removed = [], skipped = [];
+      for(const s of worlds) for(const who of PLAYERS) for(let l=0;l<=maxLevel;l++) {
+        const p = PLAYERS.indexOf(who);
+        if(!T[s.index][p][l]) continue;
+        const required = requiredLevel(formula,who);
+        if(l < required) { skipped.push({world:s.index,who,level:l,reason:'insufficient-depth',required}); continue; }
+        const result = evaluate(T,s.index,who,l,formula,initialTValue);
+        if(result.empties.length && mode==='skip-empty') { skipped.push({world:s.index,who,level:l,reason:'empty-successors',empties:result.empties}); continue; }
+        const reason = result.empties.length && mode==='prune-empty' ? 'empty-successors' : !result.truth ? 'announcement-mismatch' : null;
+        if(reason) { next[s.index][p][l]=false; removed.push({world:s.index,who,level:l,reason,empties:result.empties}); }
+      }
+      return {T:next,removed,skipped};
+    }
+    function answer(T,s,who,l) {
+      const targets = possible(T,s,who,l);
+      return {knows:targets.length===1, date:targets.length===1 ? worlds[targets[0]] : null, targets, empty:targets.length===0,
+        active:!!T[s][PLAYERS.indexOf(who)][l]};
+    }
+    function palEvaluate(active,s,f,initialActive=worlds.map(()=>true)) {
+      if(f.op==='atom') return worlds[s].id===f.id;
+      if(f.op==='not') return !palEvaluate(active,s,f.f,initialActive);
+      if(f.op==='and') return f.fs.every(g=>palEvaluate(active,s,g,initialActive));
+      if(f.op==='initial') return palEvaluate(initialActive,s,f.f,initialActive);
+      const targets=relations[PLAYERS.indexOf(f.who)][s].filter(t=>active[t]);
+      if(f.op==='knowsDate') return targets.length<=1;
+      if(f.op==='K') return targets.every(t=>palEvaluate(active,t,f.f,initialActive));
+      throw new Error('Unknown formula');
+    }
+    function trajectory(mode='paper') {
+      let T=initialT(), pal=worlds.map(()=>true);
+      const steps=[{index:0,T:cloneT(T),pal:pal.slice(),removed:[],skipped:[],removedWorlds:[],announcement:null,tupleCount:countTuples(T)}];
+      for(const announcement of dialogue(puzzle.order)) {
+        const change=update(T,announcement.formula,mode,startT);
+        const nextPAL=pal.map((v,s)=>v&&palEvaluate(pal,s,announcement.formula));
+        const removedWorlds=pal.flatMap((v,s)=>v&&!nextPAL[s] ? [s] : []);
+        T=change.T;pal=nextPAL;
+        steps.push({index:steps.length,T:cloneT(T),pal:pal.slice(),removed:change.removed,skipped:change.skipped,removedWorlds,announcement,tupleCount:countTuples(T)});
+      }
+      return {puzzle,worlds,mode,steps,solution:steps.at(-1).pal.flatMap((v,s)=>v ? [s] : [])};
+    }
+    return {puzzle,worlds,relations,edges,maxLevel,initialT,possible,evaluate,update,answer,palEvaluate,trajectory};
+  }
+  return {PLAYERS,MODES,MAX_LEVEL,atom,not,and,K,knows,initial,dialogue,paths,requiredLevel,cloneT,countTuples,levelsAt,create};
+});
+</script>
+<script>/* Answer table at the unique world satisfying the complete truthful dialogue.
+ * The reference world fixes A/B's actual private information only. Candidate
+ * filtering still uses the current snapshot, so the final answer is not leaked
+ * into any agent's information state. Graph selection never enters this table.
+ */
+(function(root,factory){
+  const api=factory();
+  if(typeof module==='object'&&module.exports)module.exports=api;
+  if(root)root.BirthdayAnswers=api;
+})(typeof globalThis==='undefined'?this:globalThis,function(){
+  'use strict';
+  function actualWorld(engine,trace){
+    const solutions=trace.steps.at(-1).pal.flatMap((active,s)=>active?[s]:[]);
+    if(solutions.length!==1)throw new Error('The complete puzzle must have exactly one ideal solution');
+    return engine.worlds[solutions[0]];
+  }
+  function table(engine,snapshot,actualIndex){
+    const actual=engine.worlds[actualIndex];
+    if(!actual||!Number.isInteger(actualIndex))throw new Error('Expected a valid actual-world index');
+    const columns=[
+      {key:'P',label:'你',information:'无私有信息'},
+      {key:'A',label:'Albert',information:'已知'+actual.month+'月'},
+      {key:'B',label:'Bernard',information:'已知'+actual.day+'日'}
+    ].map((column,player)=>({...column,worlds:engine.relations[player][actualIndex]}));
+    const cell=targets=>({targets,knows:targets.length===1,date:targets.length===1?engine.worlds[targets[0]]:null,empty:targets.length===0});
+    const rows=Array.from({length:engine.maxLevel+1},(_,level)=>({
+      level,label:String(level),ideal:false,
+      cells:columns.map((column,player)=>cell(column.worlds.filter(t=>snapshot.T[t][player][level])))
+    }));
+    rows.push({level:null,label:'正确回答',ideal:true,cells:columns.map(g=>cell(g.worlds.filter(t=>snapshot.pal[t])))});
+    return {actualIndex,columns,rows};
+  }
+  return {actualWorld,table};
+});
+</script>
+<script>/* Deterministic orthogonal/straight routing for the fixed CardsModel diagram.
+ * Pure geometry: this module does not change S, R, T or announcement semantics.
+ * Route once in base coordinates, then transform the resulting points for zoom/pan.
+ */
+(function (root, factory) {
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  if (root) root.CardsGraphRouter = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+  const EPS = 1e-7;
+  const SIDES = [
+    { name: 'right', nx: 1, ny: 0, dir: 0 },
+    { name: 'bottom', nx: 0, ny: 1, dir: 1 },
+    { name: 'left', nx: -1, ny: 0, dir: 2 },
+    { name: 'top', nx: 0, ny: -1, dir: 3 }
+  ];
+  const same = (a, b) => Math.abs(a.x - b.x) < EPS && Math.abs(a.y - b.y) < EPS;
+  const length = (a, b) => Math.hypot(b.x - a.x, b.y - a.y);
+  const cross = (a, b, c) => (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+
+  function simplify(points) {
+    const result = [];
+    for (const p of points) {
+      if (result.length && same(result[result.length - 1], p)) continue;
+      while (result.length > 1 && Math.abs(cross(result[result.length - 2], result[result.length - 1], p)) < EPS) result.pop();
+      result.push({ x: p.x, y: p.y });
+    }
+    return result;
+  }
+
+  // True only for the open interior: touching a rectangle at an endpoint is legal.
+  function segmentIntersectsRect(a, b, rect, inset = 0) {
+    const left = rect.left + inset, right = rect.right - inset;
+    const top = rect.top + inset, bottom = rect.bottom - inset;
+    if (left >= right || top >= bottom) return false;
+    let lo = 0, hi = 1;
+    const dx = b.x - a.x, dy = b.y - a.y;
+    for (const [origin, delta, min, max] of [[a.x, dx, left, right], [a.y, dy, top, bottom]]) {
+      if (Math.abs(delta) < EPS) {
+        if (origin <= min + EPS || origin >= max - EPS) return false;
+      } else {
+        const t1 = (min - origin) / delta, t2 = (max - origin) / delta;
+        lo = Math.max(lo, Math.min(t1, t2)); hi = Math.min(hi, Math.max(t1, t2));
+        if (hi - lo < EPS) return false;
+      }
+    }
+    return hi > EPS && lo < 1 - EPS && hi - lo > EPS;
+  }
+  function overlapLength(a, b, c, d) {
+    const len = length(a, b);
+    if (len < EPS || Math.abs(cross(a, b, c)) > EPS * Math.max(1, len) || Math.abs(cross(a, b, d)) > EPS * Math.max(1, len)) return 0;
+    const ux = (b.x - a.x) / len, uy = (b.y - a.y) / len;
+    const pc = (c.x - a.x) * ux + (c.y - a.y) * uy;
+    const pd = (d.x - a.x) * ux + (d.y - a.y) * uy;
+    return Math.max(0, Math.min(len, Math.max(pc, pd)) - Math.max(0, Math.min(pc, pd)));
+  }
+  function segmentsOf(points) { return points.slice(1).map((p, i) => [points[i], p]); }
+
+  class MinHeap {
+    constructor() { this.items = []; }
+    push(state, score) {
+      const entry = { state, score }, a = this.items; let at = a.length; a.push(entry);
+      while (at > 0) { const parent = (at - 1) >> 1; if (a[parent].score <= score) break; a[at] = a[parent]; at = parent; }
+      a[at] = entry;
+    }
+    pop() {
+      const a = this.items, first = a[0], last = a.pop();
+      if (a.length) {
+        let at = 0;
+        while (true) { const l = at * 2 + 1, r = l + 1; if (l >= a.length) break; const child = r < a.length && a[r].score < a[l].score ? r : l; if (a[child].score >= last.score) break; a[at] = a[child]; at = child; }
+        a[at] = last;
+      }
+      return first;
+    }
+    get size() { return this.items.length; }
+  }
+
+  function routeEdges(options) {
+    const { points, edges, nodeWidth, nodeHeight, bounds } = options;
+    if (!Array.isArray(points) || !Array.isArray(edges) || !(nodeWidth > 0 && nodeHeight > 0 && bounds?.width > 0 && bounds?.height > 0)) throw new TypeError('Expected points, edges, positive node dimensions and bounds.');
+    if (!points.every(p => Number.isFinite(p.x) && Number.isFinite(p.y))) throw new TypeError('Node coordinates must be finite.');
+    if (!edges.every(e => points[e.source] && points[e.target] && e.source !== e.target)) throw new TypeError('Edges must connect two different existing nodes.');
+    let lastError;
+    for (const step of nodeHeight < 40 ? [3, 2] : [4, 3, 2]) {
+      try { return attempt(step); } catch (error) { lastError = error; }
+    }
+    throw lastError;
+
+    function attempt(step) {
+      const width = bounds.width, height = bounds.height, clearance = 2;
+      const nx = Math.floor(width / step) + 1, ny = Math.floor(height / step) + 1, count = nx * ny;
+      const rects = points.map(p => ({ left: p.x - nodeWidth / 2, right: p.x + nodeWidth / 2, top: p.y - nodeHeight / 2, bottom: p.y + nodeHeight / 2 }));
+      const inflated = rects.map(r => ({ left: r.left - clearance, right: r.right + clearance, top: r.top - clearance, bottom: r.bottom + clearance }));
+      const blocked = new Uint8Array(count), usedGrid = new Set(), usedSegments = [], portUse = points.map(() => []);
+      const inRect = (p, r) => p.x > r.left + EPS && p.x < r.right - EPS && p.y > r.top + EPS && p.y < r.bottom - EPS;
+      for (const r of inflated) for (let y = Math.max(0, Math.ceil(r.top / step)); y <= Math.min(ny - 1, Math.floor(r.bottom / step)); y++) for (let x = Math.max(0, Math.ceil(r.left / step)); x <= Math.min(nx - 1, Math.floor(r.right / step)); x++) {
+        if (inRect({ x: x * step, y: y * step }, r)) blocked[y * nx + x] = 1;
+      }
+      const gridId = p => Math.round(p.y / step) * nx + Math.round(p.x / step);
+      const fromId = id => ({ x: (id % nx) * step, y: Math.floor(id / nx) * step });
+      const edgeKey = (a, b) => a < b ? a + ':' + b : b + ':' + a;
+      const clearPath = path => segmentsOf(path).every(([a, b]) => rects.every(r => !segmentIntersectsRect(a, b, r, EPS * 10)));
+      const noOverlap = path => segmentsOf(path).every(([a, b]) => usedSegments.every(([c, d]) => overlapLength(a, b, c, d) < .5));
+      const insideBounds = p => p.x >= 1 && p.y >= 1 && p.x <= width - 1 && p.y <= height - 1;
+
+      function allocatePort(index, other, edgeIndex, player) {
+        const p = points[index], q = points[other], dx = q.x - p.x, dy = q.y - p.y, rect = rects[index];
+        const sortedSides = SIDES.slice().sort((a, b) => {
+          const sa = a.nx * dx / (nodeWidth / 2) + a.ny * dy / (nodeHeight / 2);
+          const sb = b.nx * dx / (nodeWidth / 2) + b.ny * dy / (nodeHeight / 2);
+          return sb - sa || ((a.dir + player) % 4) - ((b.dir + player) % 4);
+        });
+        for (const side of sortedSides) {
+          const vertical = !!side.ny;
+          const min = vertical ? rect.left + 5 : rect.top + 4;
+          const max = vertical ? rect.right - 5 : rect.bottom - 4;
+          const center = vertical ? p.x : p.y;
+          const ideal = vertical ? p.x + dx * (nodeHeight / 2) / Math.max(1, Math.abs(dy)) : p.y + dy * (nodeWidth / 2) / Math.max(1, Math.abs(dx));
+          const candidates = [];
+          for (let v = Math.ceil(min / step) * step; v <= max + EPS; v += step) candidates.push(v);
+          candidates.sort((a, b) => Math.abs(a - ideal) - Math.abs(b - ideal) || Math.abs(a - center) - Math.abs(b - center) || a - b);
+          for (const v of candidates) {
+            const port = vertical ? { x: v, y: side.ny < 0 ? rect.top : rect.bottom } : { x: side.nx < 0 ? rect.left : rect.right, y: v };
+            const stub = vertical ? { x: v, y: (side.ny < 0 ? Math.floor((rect.top - clearance - 1) / step) : Math.ceil((rect.bottom + clearance + 1) / step)) * step } : { x: (side.nx < 0 ? Math.floor((rect.left - clearance - 1) / step) : Math.ceil((rect.right + clearance + 1) / step)) * step, y: v };
+            if (!insideBounds(stub) || blocked[gridId(stub)]) continue;
+            if (portUse[index].some(old => length(old, port) < step * 1.8)) continue;
+            if (rects.some((r, j) => j !== index && segmentIntersectsRect(port, stub, r, EPS * 10))) continue;
+            portUse[index].push(port);
+            return { port, stub, dir: side.dir, edgeIndex };
+          }
+        }
+        throw new Error('No free connection port for node ' + index + ' at grid ' + step);
+      }
+
+      function markUsed(path) {
+        for (const segment of segmentsOf(path)) {
+          const [a, b] = segment; usedSegments.push(segment);
+          if (Math.abs(a.y - b.y) < EPS && Math.abs(a.y / step - Math.round(a.y / step)) < EPS) {
+            const y = Math.round(a.y / step);
+            for (let x = Math.ceil(Math.min(a.x, b.x) / step); x < Math.floor(Math.max(a.x, b.x) / step); x++) usedGrid.add(edgeKey(y * nx + x, y * nx + x + 1));
+          } else if (Math.abs(a.x - b.x) < EPS && Math.abs(a.x / step - Math.round(a.x / step)) < EPS) {
+            const x = Math.round(a.x / step);
+            for (let y = Math.ceil(Math.min(a.y, b.y) / step); y < Math.floor(Math.max(a.y, b.y) / step); y++) usedGrid.add(edgeKey(y * nx + x, (y + 1) * nx + x));
+          }
+        }
+      }
+
+      function search(startPort, endPort) {
+        const start = gridId(startPort.stub), goal = gridId(endPort.stub), distances = new Float64Array(count * 4); distances.fill(Infinity);
+        const previous = new Int32Array(count * 4); previous.fill(-1);
+        const closed = new Uint8Array(count * 4), queue = new MinHeap();
+        const heuristic = id => { const x = id % nx, y = Math.floor(id / nx); return (Math.abs(x - goal % nx) + Math.abs(y - Math.floor(goal / nx))) * step; };
+        const first = start * 4 + startPort.dir; distances[first] = 0; queue.push(first, heuristic(start));
+        const directions = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+        while (queue.size) {
+          const entry = queue.pop(), state = entry.state;
+          if (closed[state]) continue;
+          closed[state] = 1;
+          const id = state >> 2, dir = state & 3;
+          if (id === goal) {
+            const path = [];
+            for (let cursor = state; cursor !== -1; cursor = previous[cursor]) path.push(fromId(cursor >> 2));
+            return path.reverse();
+          }
+          const x = id % nx, y = Math.floor(id / nx);
+          for (let nd = 0; nd < 4; nd++) {
+            const xx = x + directions[nd][0], yy = y + directions[nd][1];
+            if (xx < 1 || yy < 1 || xx >= nx - 1 || yy >= ny - 1) continue;
+            const target = yy * nx + xx;
+            if (blocked[target] || usedGrid.has(edgeKey(id, target))) continue;
+            const ns = target * 4 + nd;
+            const cost = distances[state] + step + (dir === nd ? 0 : step * 2.3);
+            if (cost + EPS < distances[ns]) { distances[ns] = cost; previous[ns] = state; queue.push(ns, cost + heuristic(target)); }
+          }
+        }
+        return null;
+      }
+
+      const order = edges.map((e, index) => ({ ...e, index, distance: length(points[e.source], points[e.target]) })).sort((a, b) => b.distance - a.distance || a.player - b.player || a.index - b.index);
+      const output = new Array(edges.length);
+      for (const edge of order) {
+        const a = allocatePort(edge.source, edge.target, edge.index, edge.player), b = allocatePort(edge.target, edge.source, edge.index, edge.player);
+        const candidatePaths = [
+          [a.port, b.port],
+          [a.port, a.stub, b.stub, b.port],
+          [a.port, a.stub, { x: a.stub.x, y: b.stub.y }, b.stub, b.port],
+          [a.port, a.stub, { x: b.stub.x, y: a.stub.y }, b.stub, b.port]
+        ].map(simplify).filter(path => clearPath(path) && noOverlap(path));
+        candidatePaths.sort((p, q) => segmentsOf(p).reduce((n, s) => n + length(...s), 0) + p.length * step * 2.3 - segmentsOf(q).reduce((n, s) => n + length(...s), 0) - q.length * step * 2.3);
+        let path = candidatePaths[0];
+        if (!path) {
+          const gridPath = search(a, b);
+          if (!gridPath) throw new Error('No non-overlapping route for edge ' + edge.source + '-' + edge.target + ' at grid ' + step);
+          path = simplify([a.port, ...gridPath, b.port]);
+          if (!clearPath(path) || !noOverlap(path)) throw new Error('Route failed geometry checks for edge ' + edge.source + '-' + edge.target + ' at grid ' + step);
+        }
+        output[edge.index] = { ...edges[edge.index], points: path };
+        markUsed(path);
+      }
+      return output;
+    }
+  }
+  return { routeEdges, segmentIntersectsRect, overlapLength };
+});
+</script>
+<script>(function(){
+  'use strict';
+  const M=window.BirthdayModel, D=JSON.parse(document.getElementById('birthday-data').textContent);
+  const $=id=>document.getElementById(id), svg=$('graph');
+  const names={P:'你',A:'Albert',B:'Bernard'}, colors={P:'#598065',A:'#397ebd',B:'#c27833'};
+  const storageKey='cheryl-birthday-v1';
+  const defaults={order:2,configuration:'original',mode:'paper',step:0,selected:null,edges:'focus',zoom:1,panX:0,panY:0};
+  let saved={};try{saved=JSON.parse(localStorage.getItem(storageKey)||'{}');}catch(_e){}
+  const state={...defaults,...saved};
+  if(![1,2,3,4].includes(state.order))state.order=2;
+  if(!['original','months','days','both'].includes(state.configuration))state.configuration='original';
+  if(!M.MODES.includes(state.mode))state.mode='paper';
+  if(!['focus','all','A','B','P'].includes(state.edges))state.edges='focus';
+  delete state.answerSubject;
+  delete state.observer;delete state.level;
+  state.zoom=Math.max(.5,Math.min(2.4,Number(state.zoom)||1));
+  state.panX=Number.isFinite(state.panX)?state.panX:0;state.panY=Number.isFinite(state.panY)?state.panY:0;
+  let engine,trace,actualIndex,geometry,routeCache=new Map(),selectedEdge=null,displayedRoutes=[];
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const compact=w=>`${w.month}/${w.day}`;
+  const save=()=>{try{localStorage.setItem(storageKey,JSON.stringify(state));}catch(_e){}};
+  const current=()=>trace.steps[state.step];
+  const previous=()=>trace.steps[Math.max(0,state.step-1)];
+  function rebuild(reset=false){
+    const puzzle=D.puzzles.find(p=>p.order===state.order&&p.configuration===state.configuration);
+    engine=M.create(puzzle);trace=engine.trajectory(state.mode);
+    actualIndex=window.BirthdayAnswers.actualWorld(engine,trace).index;
+    if(reset){state.step=0;state.selected=actualIndex;state.zoom=1;state.panX=state.panY=0;}
+    state.step=Math.max(0,Math.min(trace.steps.length-1,Math.floor(state.step)||0));
+    state.selected=Number.isInteger(state.selected)&&engine.worlds[state.selected]?state.selected:actualIndex;
+    routeCache.clear();selectedEdge=null;geometry=null;
+    $('date-list').innerHTML=[5,6,7,8,9].map(month=>`<div>${month}月：${engine.worlds.filter(w=>w.month===month).map(w=>w.day).join('、')}日</div>`).join('');
+    $('dialogue').innerHTML=M.dialogue(state.order).map(a=>`<li>${names[a.speaker]}：“${a.text}”</li>`).join('');
+    render();
+  }
+  function dateButtons(indices,cls='date-link'){
+    return indices.length?indices.map(s=>`<button type="button" class="${cls}" data-date="${s}">${engine.worlds[s].label}</button>`).join(''):'无';
+  }
+  function renderAnswers(){
+    const table=window.BirthdayAnswers.table(engine,current(),actualIndex);
+    $('answer-subtitle').textContent='A/B 私有信息按完整题目的唯一解固定；各阶只使用当前步骤的宣告。';
+    $('answer-format').textContent='集合内日期按“月/日”显示；知道时显示完整日期。';
+    $('answer-caption').textContent='真实生日对应的信息条件下，你、Albert、Bernard 各阶的候选日期与回答；最后一行为当前步骤的理想 PAL 回答';
+    $('answers-head').innerHTML='<tr><th scope="col">ToM</th>'+table.columns.map(column=>`<th scope="col">${esc(column.label)}<span class="answer-information">${esc(column.information)}</span></th>`).join('')+'</tr>';
+    const answerCell=(cell,column)=>{
+      const full=cell.targets.map(t=>engine.worlds[t].label);
+      const attrs=`data-subject="${esc(column.key)}" data-targets="${cell.targets.join(',')}"`;
+      if(cell.knows)return `<td ${attrs} aria-label="知道${esc(cell.date.label)}"><span class="answer-known"><span>${esc(cell.date.label)}</span></span></td>`;
+      if(cell.empty)return `<td ${attrs} aria-label="无有效候选"><span class="answer-empty">∅</span></td>`;
+      return `<td ${attrs} aria-label="可能的日期：${esc(full.join('、'))}"><span class="answer-set">{${cell.targets.map(t=>`<span class="date-token">${esc(compact(engine.worlds[t]))}</span>`).join(',<wbr>')}}</span></td>`;
+    };
+    $('answers').innerHTML=table.rows.map(row=>`<tr${row.ideal?' class="pal-row"':''} data-level="${row.ideal?'ideal':row.level}"><th scope="row">${row.label}</th>${row.cells.map((cell,i)=>answerCell(cell,table.columns[i])).join('')}</tr>`).join('');
+  }
+  function render(){
+    const cur=current();
+    $('order').value=state.order;$('configuration').value=state.configuration;$('semantics').value=state.mode;
+    $('edges').value=state.edges;
+    $('prev').disabled=state.step===0;$('next').disabled=state.step===trace.steps.length-1;
+    $('step-number').textContent=`${state.step} / ${trace.steps.length-1} 步`;
+    $('announcement').textContent=cur.announcement?`${names[cur.announcement.speaker]}：“${cur.announcement.text}”`:'初始模型 · 尚未宣告';
+    $('counts').textContent=`T 中保留 ${cur.tupleCount} / 180 个条目`+(state.step?` · 本步移除 ${cur.removed.length} 个`:'')+` · PAL 基准剩余 ${cur.pal.filter(Boolean).length} 个日期`;
+    $('zoom-value').textContent=Math.round(state.zoom*100)+'%';
+    $('zoom-out').disabled=state.zoom<=.5;$('zoom-in').disabled=state.zoom>=2.4;
+    renderAnswers();
+    $('neighbor-date').textContent=engine.worlds[state.selected].label;
+    $('neighbors').innerHTML=['A','B'].map(who=>{
+      const ts=engine.relations[M.PLAYERS.indexOf(who)][state.selected].filter(t=>t!==state.selected);
+      return `<div class="neighbor-row"><span class="neighbor-who"><i class="dot" style="background:${colors[who]}"></i>${names[who]}</span><span class="neighbor-links">${ts.length?dateButtons(ts,''):'仅自身'}</span></div>`;
+    }).join('')+'<div class="neighbor-note">你的基础关系通向全部 10 个日期。</div>';
+    const dates=indices=>indices.length?indices.map(s=>`<span class="pal-date" data-pal-world="${s}">${engine.worlds[s].label}</span>`).join(''):'无';
+    $('pal-removed').innerHTML=dates(cur.removedWorlds);
+    $('pal-excluded').innerHTML=dates(cur.pal.flatMap((active,s)=>active?[]:[s]));
+    drawGraph();save();
+  }
+  function getGeometry(){
+    const W=Math.round($('graph-container').clientWidth),H=Math.round($('graph-container').clientHeight),grid=W>=700;
+    const key=`${engine.puzzle.id}:${W}:${H}`;
+    if(geometry?.key===key)return geometry;
+    const nodeWidth=112,nodeHeight=80;
+    const columns=W>=460?3:2;
+    const points=engine.worlds.map((w,i)=>grid
+      ?{x:90+(w.day-14)*(W-166)/4,y:66+(w.month-5)*(H-128)/4}
+      :{x:72+(i%columns)*(W-144)/(columns-1),y:61+Math.floor(i/columns)*(H-122)/(Math.ceil(10/columns)-1)});
+    geometry={key,W,H,points,nodeWidth,nodeHeight,grid};routeCache.clear();return geometry;
+  }
+  function routeEdges(edges,key){
+    if(routeCache.has(key))return routeCache.get(key);
+    const g=getGeometry();
+    const routes=window.CardsGraphRouter.routeEdges({...g,edges,bounds:{width:g.W,height:g.H}});
+    routeCache.set(key,routes);return routes;
+  }
+  function drawGraph(){
+    const g=getGeometry(),cur=current(),prev=previous();
+    svg.setAttribute('viewBox',`0 0 ${g.W} ${g.H}`);
+    const baseEdges=engine.edges.filter(e=>e.player!==0);
+    const allRoutes=routeEdges(baseEdges,'AB');
+    displayedRoutes=state.edges==='P'?routeEdges(engine.edges.filter(e=>e.player===0&&(e.source===state.selected||e.target===state.selected)),'P-'+state.selected)
+      :allRoutes.filter(e=>state.edges==='focus'?(e.source===state.selected||e.target===state.selected):state.edges==='all'?true:M.PLAYERS[e.player]===state.edges);
+    if(selectedEdge&&!displayedRoutes.some(e=>edgeId(e)===selectedEdge))selectedEdge=null;
+    const S='http://www.w3.org/2000/svg';
+    const make=(tag,attrs={},text)=>{const e=document.createElementNS(S,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;};
+    svg.replaceChildren(make('title',{},'生日可能世界与各阶视角列表'),make('desc',{},'每个节点为一个候选生日。选中日期有双框。节点的位置在逐步宣告时保持不变。'));
+    const scene=make('g',{'data-scene':'','transform':transform(g)});svg.append(scene);
+    if(g.grid){
+      for(let d=14;d<=18;d++)scene.append(make('text',{x:90+(d-14)*(g.W-166)/4,y:20,'text-anchor':'middle',class:'axis'},`${d}日`));
+      for(let m=5;m<=9;m++)scene.append(make('text',{x:12,y:70+(m-5)*(g.H-128)/4,class:'axis'},`${m}月`));
+    }
+    for(const e of displayedRoutes){
+      const who=M.PLAYERS[e.player],d=e.points.map((p,i)=>(i?'L':'M')+p.x+','+p.y).join(' '),id=edgeId(e);
+      const group=make('g',{'data-edge':id});
+      group.append(make('path',{d,class:'edge-halo'}),make('path',{d,class:'edge-visible',stroke:colors[who],...(who==='A'?{}:{'stroke-dasharray':'6 4'})}),make('path',{d,class:'edge-hit','data-edge':id}));
+      for(const endpoint of [e.points[0],e.points.at(-1)])group.append(make('circle',{cx:endpoint.x,cy:endpoint.y,r:2.7,fill:colors[who],'pointer-events':'none'}));
+      scene.append(group);
+    }
+    for(const w of engine.worlds){
+      const pt=g.points[w.index],selected=w.index===state.selected;
+      const group=make('g',{class:'node',role:'button',tabindex:0,'aria-label':`${w.label}，点击查看连接`,'aria-pressed':selected?'true':'false','data-node':w.index});
+      group.append(make('rect',{x:pt.x-56,y:pt.y-40,width:112,height:80,rx:6,fill:'#fff',stroke:selected?'#397ebd':'#cfd9e5','stroke-width':selected?1.8:1,class:'node-box'}));
+      if(selected)group.append(make('rect',{x:pt.x-60,y:pt.y-44,width:120,height:88,rx:9,fill:'none',stroke:'#397ebd','stroke-width':1,'pointer-events':'none'}));
+      group.append(make('text',{x:pt.x,y:pt.y-22,'text-anchor':'middle',class:'node-title'},w.label));
+      M.PLAYERS.forEach((who,p)=>{
+        const y=pt.y-3+p*16;
+        group.append(make('text',{x:pt.x-47,y},who==='P'?'你':who));
+        group.append(make('text',{x:pt.x-32,y},'['),make('text',{x:pt.x+47,y},']'));
+        for(let l=0;l<=5;l++){
+          const active=cur.T[w.index][p][l],was=prev.T[w.index][p][l];
+          group.append(make('text',{x:pt.x-23+l*12,y,'text-anchor':'middle',class:active?'':was?'newly-removed':'missing'},l));
+        }
+      });
+      scene.append(group);
+    }
+    updateConnection();
+  }
+  function transform(g){return `translate(${g.W/2+state.panX} ${g.H/2+state.panY}) scale(${state.zoom}) translate(${-g.W/2} ${-g.H/2})`;}
+  function updateTransform(){const g=getGeometry();svg.querySelector('[data-scene]')?.setAttribute('transform',transform(g));$('zoom-value').textContent=Math.round(state.zoom*100)+'%';$('zoom-out').disabled=state.zoom<=.5;$('zoom-in').disabled=state.zoom>=2.4;}
+  const edgeId=e=>`${e.player}:${e.source}:${e.target}`;
+  function updateConnection(){
+    const edge=displayedRoutes.find(e=>edgeId(e)===selectedEdge);
+    $('connection').textContent=edge?`${names[M.PLAYERS[edge.player]]}：${engine.worlds[edge.source].label} ↔ ${engine.worlds[edge.target].label}`:`${engine.worlds[state.selected].label} · 当前显示 ${displayedRoutes.length} 条基础关系`;
+  }
+  function select(s){state.selected=Number(s);selectedEdge=null;render();}
+  function zoom(factor,anchor){
+    const old=state.zoom,next=Math.round(Math.max(.5,Math.min(2.4,old*factor))*100)/100,g=getGeometry();
+    if(anchor){state.panX=anchor.x-g.W/2-(anchor.x-g.W/2-state.panX)*next/old;state.panY=anchor.y-g.H/2-(anchor.y-g.H/2-state.panY)*next/old;}
+    state.zoom=next;updateTransform();save();
+  }
+  $('order').addEventListener('change',e=>{state.order=Number(e.target.value);rebuild(true);});
+  $('configuration').addEventListener('change',e=>{state.configuration=e.target.value;rebuild(true);});
+  $('semantics').addEventListener('change',e=>{state.mode=e.target.value;rebuild();});
+  $('prev').addEventListener('click',()=>{if(state.step>0){state.step--;render();}});
+  $('next').addEventListener('click',()=>{if(state.step<trace.steps.length-1){state.step++;render();}});
+  $('edges').addEventListener('change',e=>{state.edges=e.target.value;selectedEdge=null;drawGraph();save();});
+  $('zoom-in').addEventListener('click',()=>zoom(1.2));$('zoom-out').addEventListener('click',()=>zoom(1/1.2));
+  $('fit').addEventListener('click',()=>{state.zoom=1;state.panX=state.panY=0;updateTransform();save();});
+  document.getElementById('birthday-app').addEventListener('click',e=>{const b=e.target.closest('[data-date]');if(b)select(b.dataset.date);});
+  svg.addEventListener('keydown',e=>{const n=e.target.closest('[data-node]');if(n&&(e.key==='Enter'||e.key===' ')){e.preventDefault();select(n.dataset.node);svg.querySelector(`[data-node="${n.dataset.node}"]`)?.focus();}});
+  svg.addEventListener('wheel',e=>{e.preventDefault();const r=svg.getBoundingClientRect();zoom(e.deltaY<0?1.08:1/1.08,{x:e.clientX-r.left,y:e.clientY-r.top});},{passive:false});
+  let drag=null,suppressClick=false;
+  svg.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag={x:e.clientX,y:e.clientY,panX:state.panX,panY:state.panY,moved:false,node:e.target.closest('[data-node]')?.dataset.node};svg.setPointerCapture(e.pointerId);});
+  svg.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)drag.moved=true;if(drag.moved){state.panX=drag.panX+dx;state.panY=drag.panY+dy;svg.classList.add('dragging');updateTransform();}});
+  svg.addEventListener('pointerup',()=>{const selected=drag&&!drag.moved?drag.node:undefined;suppressClick=!!drag?.moved||selected!==undefined;drag=null;svg.classList.remove('dragging');if(selected!==undefined)select(selected);save();});
+  svg.addEventListener('pointercancel',()=>{drag=null;svg.classList.remove('dragging');});
+  svg.addEventListener('click',e=>{
+    if(suppressClick){suppressClick=false;return;}
+    const node=e.target.closest('[data-node]');if(node){select(node.dataset.node);return;}
+    // Resolve by distance, since transparent edge hit areas can overlap.
+    const r=svg.getBoundingClientRect(),g=getGeometry();
+    const p={x:(e.clientX-r.left-g.W/2-state.panX)/state.zoom+g.W/2,y:(e.clientY-r.top-g.H/2-state.panY)/state.zoom+g.H/2};
+    let nearest=null,best=8/state.zoom;
+    for(const edge of displayedRoutes)for(let i=1;i<edge.points.length;i++){
+      const a=edge.points[i-1],b=edge.points[i],dx=b.x-a.x,dy=b.y-a.y;
+      const t=Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy||1)));
+      const distance=Math.hypot(p.x-a.x-t*dx,p.y-a.y-t*dy);
+      if(distance<best){best=distance;nearest=edge;}
+    }
+    selectedEdge=nearest?edgeId(nearest):null;updateConnection();
+  });
+  let resizeTimer;
+  new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{geometry=null;drawGraph();},50);}).observe($('graph-container'));
+  window.__birthdayDebug={state,get engine(){return engine;},get trace(){return trace;},get geometry(){return geometry;},get routes(){return displayedRoutes;},rebuild};
+  rebuild();
+})();
+</script>
+</body>
+</html>
